@@ -60,6 +60,12 @@ public class Product implements Serializable {
     @Size(min = 1, max = 20)
     @Column(name = "Categorie")
     private String categorie;
+    @Basic(optional = false)
+    @NotNull
+    @Lob
+    @Size(min = 1, max = 65535)
+    @Column(name = "Foto")
+    private String foto;
 
     public Product() {
     }
@@ -68,12 +74,13 @@ public class Product implements Serializable {
         this.id = id;
     }
 
-    public Product(Integer id, String naam, float prijs, String omschrijving, String categorie) {
+    public Product(Integer id, String naam, float prijs, String omschrijving, String categorie, String foto) {
         this.id = id;
         this.naam = naam;
         this.prijs = prijs;
         this.omschrijving = omschrijving;
         this.categorie = categorie;
+        this.foto = foto;
     }
 
     public Integer getId() {
@@ -114,6 +121,14 @@ public class Product implements Serializable {
 
     public void setCategorie(String categorie) {
         this.categorie = categorie;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
     @Override
