@@ -11,6 +11,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceUnit;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 
@@ -25,6 +26,13 @@ public class productDAO {
     
     public List<Product> getprodlijst() {
          TypedQuery<Product> query = em.createNamedQuery("Product.findAll", Product.class);
+         List<Product> producten = query.getResultList();
+         return producten;
+    }
+    
+    public List<Product> getVoeding() {
+         Query query;
+        query = em.createQuery("SELECT p FROM Product p WHERE Categorie = Voeding");
          List<Product> producten = query.getResultList();
          return producten;
     }
