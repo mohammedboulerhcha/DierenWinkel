@@ -6,7 +6,13 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h:form target="Catalogus.xhtml" >
+            E-mail adres: <h:inputText id="email"></h:inputText> <br/>
+            Wachtwoord: <h:inputSecret id="wachtwoord"></h:inputSecret> <br/>
+            <h:commandButton action="Catalogus.xhtml" value="Log in"></h:commandButton>
+        </h:form>
+        <h:link outcome="NieuweAccount.xhtml" value="Nog geen account?"></h:link>
+        
     </h:body>
 </html>
 

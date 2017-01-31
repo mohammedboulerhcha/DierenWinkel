@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+        <title>PetStoreOnline - Catalogus</title>
+        <h:outputStylesheet name="./css/Style.css"/>
+    </h:head>
+    <h:body>
+        <div class="top">
+            <h:link value="Voeding"></h:link> 
+            <h:link value="Speelgoed"></h:link>
+            <h:link value="Habitat"></h:link>
+        </div>
+        <div class="center_content">
+            <h:dataTable value="${productBean.prodlijst}" var="artikel">
+                <h:column>
+                    <f:facet name="header"><h:outputLabel value="id"></h:outputLabel></f:facet>
+                    <h:outputText value="${artikel.id}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><h:outputLabel value="naam"></h:outputLabel></f:facet>
+                    <h:outputText value="${artikel.naam}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><h:outputLabel value="omschrijving"></h:outputLabel></f:facet>
+                    <h:outputText value="${artikel.omschrijving}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><h:outputLabel value="prijs"></h:outputLabel></f:facet>
+                    <h:outputText value="${artikel.prijs}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><h:outputLabel value="foto"></h:outputLabel></f:facet>
+                    <h:outputText value="${artikel.foto}"></h:outputText>
+                </h:column>
+            </h:dataTable>
+        </div>
+        
+    </h:body>
+</html>
+
