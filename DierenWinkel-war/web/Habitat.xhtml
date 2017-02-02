@@ -11,6 +11,10 @@
             <h:link value="Voeding" style="padding: 20px" outcome="Voeding.xhtml"></h:link>
             <h:link value="Speelgoed" style="padding: 20px" outcome="Speelgoed.xhtml"></h:link>
             <h:link value="Habitat" style="padding: 20px" outcome="Habitat.xhtml"></h:link>
+            <h:form target="Catalogus.xhtml">
+                Zoek: <h:inputText id="zoek" value="#{zoek}"></h:inputText> <br/>
+                <h:commandButton action="ProductPagina.xhtml" value="o-"></h:commandButton>
+            </h:form>
         </div>
         <div class="center_content">
             <h:dataTable value="${productBean.habitat}" var="artikel">
