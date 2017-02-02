@@ -44,6 +44,10 @@ public class productBean implements Serializable{
         return proddao.getHabitat();
     }
     
+    public List<Product> getSpecifiekArtikel(String zoek) {
+        return proddao.getSpecifiekArtikel(zoek);
+    }
+    
 }
 
 

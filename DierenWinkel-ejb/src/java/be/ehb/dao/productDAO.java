@@ -55,5 +55,12 @@ public class productDAO {
         List<Product> producten = query.getResultList();
         return producten;
     }
+    
+    public List<Product> getSpecifiekArtikel(String zoek) {
+        Query query;
+        query = em.createNamedQuery("Product.findByNaam").setParameter("naam", zoek);
+        List<Product> producten = query.getResultList();
+        return producten;
+    }
 
 }
