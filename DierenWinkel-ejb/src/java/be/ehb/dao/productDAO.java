@@ -31,9 +31,11 @@ public class productDAO {
     }
 
     /**
-     * ik heb deze link gebruikt http://docs.oracle.com/javaee/6/tutorial/doc/bnbrg.html
-     * en ook dank aan David
-     * @return 
+     * ik heb deze link gebruikt
+     * http://docs.oracle.com/javaee/6/tutorial/doc/bnbrg.html en ook dank aan
+     * David
+     *
+     * @return
      */
     public List<Product> getVoeding() {
         Query query;
@@ -41,26 +43,32 @@ public class productDAO {
         List<Product> producten = query.getResultList();
         return producten;
     }
-    
+
     public List<Product> getSpeelgoed() {
         Query query;
         query = em.createNamedQuery("Product.findByCategorie").setParameter("categorie", "speelgoed");
         List<Product> producten = query.getResultList();
         return producten;
     }
-    
+
     public List<Product> getHabitat() {
         Query query;
         query = em.createNamedQuery("Product.findByCategorie").setParameter("categorie", "habitat");
         List<Product> producten = query.getResultList();
         return producten;
     }
-    
+
     public List<Product> getSpecifiekArtikel(String zoek) {
         Query query;
         query = em.createNamedQuery("Product.findByNaam").setParameter("naam", zoek);
         List<Product> producten = query.getResultList();
+        if(producten == null) {
+            query = em.createNamedQuery("Product.findByPrijs").setParameter("prijs", zoek);
+            List<Product> product = query.getResultList();
+            return product;
+        } else {
         return producten;
+        }
     }
 
 }
