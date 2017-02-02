@@ -5,6 +5,8 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Voeding</title>
+        <h:outputStylesheet library="css" name="default.css"/>
+        <h:outputStylesheet library="css" name="cssLayout.css"/>
     </h:head>
     <h:body>
         <div class="top">
@@ -18,7 +20,7 @@
         </div>
         <div class="center_content">
             <h:dataTable value="${productBean.voeding}" var="artikel">
-                
+
                 <h:column>
                     <f:facet name="header"><h:outputLabel value="naam"></h:outputLabel></f:facet>
                     <h:outputText value="${artikel.naam}"></h:outputText>
