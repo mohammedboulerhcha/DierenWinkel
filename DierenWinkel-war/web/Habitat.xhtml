@@ -14,7 +14,7 @@
         </div>
         <div class="center_content">
             <h:dataTable value="${productBean.habitat}" var="artikel">
-                
+
                 <h:column>
                     <f:facet name="header"><h:outputLabel value="naam"></h:outputLabel></f:facet>
                     <h:outputText value="${artikel.naam}"></h:outputText>
@@ -30,6 +30,9 @@
                 <h:column>
                     <f:facet name="header"><h:outputLabel value="foto"></h:outputLabel></f:facet>
                     <img src="${artikel.foto}" height="120px"></img>
+                </h:column>
+                <h:column>
+                    <h:button value="Toevoegen aan winkelkar"></h:button>
                 </h:column>
             </h:dataTable>
         </div>
