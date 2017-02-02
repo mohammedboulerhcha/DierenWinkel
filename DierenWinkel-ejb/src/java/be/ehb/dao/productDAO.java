@@ -32,6 +32,7 @@ public class productDAO {
 
     /**
      * ik heb deze link gebruikt http://docs.oracle.com/javaee/6/tutorial/doc/bnbrg.html
+     * en ook dank aan David
      * @return 
      */
     public List<Product> getVoeding() {

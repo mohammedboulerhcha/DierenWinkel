@@ -3,25 +3,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    
+
     <h:head>
         <title>Catalogus</title>
-        <h:outputStylesheet name="./css/Style.css"/>
     </h:head>
     <h:body>
         <div class="top">
             <h:link value="Voeding" style="padding: 20px" outcome="Voeding.xhtml"></h:link>
             <h:link value="Speelgoed" style="padding: 20px" outcome="Speelgoed.xhtml"></h:link>
             <h:link value="Habitat" style="padding: 20px" outcome="Habitat.xhtml"></h:link>
+            <h:link value="ProductPagina" style="padding: 20px" outcome="ProductPagina.xhtml"></h:link>
         </div>
         <div class="center_content">
             <h:dataTable value="${productBean.prodLijst}" var="artikel">
-                
                 <h:column>
                     <f:facet name="header"><h:outputLabel value="naam"></h:outputLabel></f:facet>
                     <h:outputText value="${artikel.naam}"></h:outputText> 
                 </h:column>
-                
                 <h:column>
                     <f:facet name="header"><h:outputLabel value="prijs"></h:outputLabel></f:facet>
                     <h:outputText value="${artikel.prijs}"></h:outputText>
@@ -30,9 +28,12 @@
                     <f:facet name="header"><h:outputLabel value="foto"></h:outputLabel></f:facet>
                     <img src="${artikel.foto}" height="120px"></img>
                 </h:column>
+                <h:column>
+                    <h:button value="Toevoegen aan winkelkar"></h:button>
+                </h:column>
             </h:dataTable>
         </div>
-        
+
     </h:body>
 </html>
 
