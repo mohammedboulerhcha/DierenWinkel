@@ -6,26 +6,30 @@
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <h:outputStylesheet name="./css/default.css"/>
-        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <link href="resources/css/cssLayout.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/default.css" rel="stylesheet" type="text/css"/>
         <title>Dierenwinkel</title>
     </h:head>
 
     <h:body>
 
         <div id="top">
-            <ui:insert name="top">//TODO banner doen werken</ui:insert>
+            <h:link value="Voeding" style="padding: 20px" outcome="Voeding.xhtml"></h:link>
+            <h:link value="Speelgoed" style="padding: 20px" outcome="Speelgoed.xhtml"></h:link>
+            <h:link value="Habitat" style="padding: 20px" outcome="Habitat.xhtml"></h:link>
         </div>
         <div>
             <div id="left">
-                <ui:insert name="left">Left</ui:insert>
+                <ui:insert name="left" ></ui:insert>
             </div>
             <div>
                 <div id="right">
                     <ui:insert name="right">Right</ui:insert>
                 </div>
                 <div id="content" class="right_content">
-                    <ui:insert name="content">Content</ui:insert>
+                    <ui:insert name="content">
+                    <h:button value="Toevoegen aan winkelkar"></h:button>
+                    </ui:insert>
                 </div>
             </div>
         </div>        
