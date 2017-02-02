@@ -6,19 +6,21 @@
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <h:outputStylesheet name="./css/Style.css"/>
-        
+
+        <h:outputStylesheet library="css" name="default.css"/>
+        <h:outputStylesheet library="css" name="cssLayout.css"/>
         <title>PetStoreOnline - Registreren</title>
     </h:head>
 
     <h:body>
 
         <div id="top" class="top">
-            <ui:insert name="Registreren">Top</ui:insert>
+            <ui:insert name="Registreren">Maak hier uw account aan</ui:insert>
         </div>
 
         <div id="content" class="center_content">
             <h:form >
+                <h:panelGrid>
                 Voornaam: <h:inputText id="vnaam"></h:inputText> <br/>
                 Familienaam: <h:inputText id="fnaam"></h:inputText> <br/>
                 E-mail adres: <h:inputText id="email"></h:inputText> <br/>
@@ -26,6 +28,7 @@
                 Wachtwoord: <h:inputSecret id="wachtw1"></h:inputSecret> <br/>
                 Wachtwoord verifiëren: <h:inputSecret id="wachtw2"></h:inputSecret> <br/>
                 <h:commandButton value="Aanmaken"></h:commandButton>
+                </h:panelGrid>
             </h:form>
         </div>
 
