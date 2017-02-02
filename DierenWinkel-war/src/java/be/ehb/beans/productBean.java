@@ -28,12 +28,20 @@ public class productBean implements Serializable{
     public productBean() {
     }
     
-    public List<Product> getprodlijst() {
-        return proddao.getprodlijst();
+    public List<Product> getProdLijst() {
+        return proddao.getProdLijst();
     }
     
     public List<Product> getVoeding() {
         return proddao.getVoeding();
+    }
+    
+    public List<Product> getSpeelgoed() {
+        return proddao.getSpeelgoed();
+    }
+    
+    public List<Product> getHabitat() {
+        return proddao.getHabitat();
     }
     
 }
