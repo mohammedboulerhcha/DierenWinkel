@@ -8,20 +8,44 @@
         <h:outputStylesheet library="css" name="cssLayout.css"/>
     </h:head>
     <h:body>
-      
+
         <h:form target="Catalogus.xhtml" >
             <h1 class="top">Welkom op Petshop.be</h1>
             <h3>Gelieve in te loggen of een account aan te maken</h3>
-            <h:panelGrid columns="2">
-                E-mail adres:<h:inputText id="email" value="@"></h:inputText> <br/>
-                Wachtwoord: <h:inputSecret id="wachtwoord" value="...."></h:inputSecret> <br/>
-            <br/>
-            <h:commandButton class="login" action="Catalogus.xhtml" value="Log in"></h:commandButton>
+            <h:panelGrid columns="2" cellpadding="5" cellspacing="5">
+                <h:outputLabel for="e_mail_adres" value="e_mail_adres" />
+                <h:inputText id="e_mail_adres" value="#{beanValidationView.e_mail_adres}" label="e_mail_adres"/>
+                <h:message for="e_mail_adres" />
+                <h:outputText value="#{beanValidationView.e_mail_adres}" />
+                <h:outputLabel for="Wachtwoord" value="Wachtwoord: (@Pattern(regexp='^[-+]?\\d+$'))" />
+                <h:inputText id="pattern" value="#{beanValidationView.wachtwoord}" label="Wachtwoord"/>
+                <h:message for="Wachtwoord" />
+                <h:outputText value="#{beanValidationView.wachtwoord}" />
+                <br/>
+                <h:commandButton class="login" action="Catalogus.xhtml" value="Log in"></h:commandButton>
+            </h:panelGrid> <growl id="msgs" />
+
+            <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                <h:outputText value="I accept terms and conditions: " />
+                <h:selectBooleanCheckbox id="value1" value="#{selectBooleanView.value1}" style="width:60px" ></h:selectBooleanCheckbox>
+
+                <h:outputText value="Subscribe me to newsletter: " />
+                <h:selectBooleanCheckbox >
+                    <ajax update="msgs" listener="#{selectBooleanView.addMessage}" />
+                </h:selectBooleanCheckbox>
             </h:panelGrid>
+
+            <h:commandButton id="submit" value="Submit"   > </h:commandButton>
+
+            <dialog id="dialog" header="Values" modal="true" resizable="false" showEffect="fade" widgetVar="dlg">
+                <h:panelGrid columns="1" id="display">
+
+                </h:panelGrid>
+            </dialog>
         </h:form>
-         <br/> <br/>
+        <br/> <br/>
         <h:link outcome="NieuweAccount.xhtml" value="Nog geen account?"></h:link>
-        
+
     </h:body>
 </html>
 
