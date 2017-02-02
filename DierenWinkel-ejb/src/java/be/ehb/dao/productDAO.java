@@ -32,7 +32,7 @@ public class productDAO {
     
     public List<Product> getVoeding() {
          Query query;
-        query = em.createQuery("SELECT p FROM Product p WHERE Categorie = Voeding");
+        query = em.createQuery("SELECT p FROM Product p WHERE p.Categorie = 'voeding'");
          List<Product> producten = query.getResultList();
          return producten;
     }
