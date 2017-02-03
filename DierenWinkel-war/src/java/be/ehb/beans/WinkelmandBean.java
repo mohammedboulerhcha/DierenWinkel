@@ -32,6 +32,10 @@ public class WinkelmandBean implements Serializable{
         inhoudmand.add(p);
     }
     
+    public void verwijder(Product p) {
+        inhoudmand.remove(p);
+    }
+    
     public HashSet<Product> weergeven(Product p) {
         return inhoudmand;
     }

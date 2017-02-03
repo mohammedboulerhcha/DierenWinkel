@@ -9,6 +9,16 @@
         <h:outputStylesheet library="css" name="cssLayout.css"/>
     </h:head>
     <h:body>
+        <div class="top">
+            <h:link value="Voeding" style="padding: 20px" outcome="Voeding.xhtml"></h:link>
+            <h:link value="Speelgoed" style="padding: 20px" outcome="Speelgoed.xhtml"></h:link>
+            <h:link value="Habitat" style="padding: 20px" outcome="Habitat.xhtml"></h:link>
+            <h:link value="Winkelmand" style="padding: 20px" outcome="Winkelmandje.xhtml"></h:link>
+            <h:form target="Catalogus.xhtml">
+                Zoek: <h:inputText id="zoek" value="#{zoek}"></h:inputText> <br/>
+                <h:commandButton action="ProductPagina.xhtml" value="o-"></h:commandButton>
+            </h:form>
+        </div>
         <h:dataTable value="${winkelmandBean.weergeven(p)}" var="artikel">
 
             <h:column>
@@ -20,14 +30,22 @@
                 <h:outputText value="${artikel.prijs}"></h:outputText>
             </h:column>
             <h:column>
-                <f:facet name="header"><h:outputLabel value="prijs" class="h3"></h:outputLabel></f:facet>
+                <f:facet name="header"><h:outputLabel value="omschrijving" class="h3"></h:outputLabel></f:facet>
                 <h:outputText value="${artikel.omschrijving}"></h:outputText>
             </h:column>
             <h:column>
                 <f:facet name="header"><h:outputLabel value="foto" class="h3"></h:outputLabel></f:facet>
                 <img class="img-thumbnail" src="${artikel.foto}" style="height: auto; width: 200px;"></img>
             </h:column>
+            <h:column>
+                <h:form>
+                    <h:commandButton action="${winkelmandBean.verwijder(artikel)}" value="remove"></h:commandButton>
+                </h:form>
+            </h:column>
         </h:dataTable>
+        <h:form>
+            <h:commandButton action="" value="remove"></h:commandButton>
+        </h:form>
     </h:body>
 </html>
 
