@@ -9,6 +9,9 @@
     </h:head>
     <h:body>
 
+
+        <h1 class="top">Welkom op Petshop.be</h1>
+        <h3>Gelieve in te loggen of een account aan te maken</h3>
         <h:form target="Catalogus.xhtml" >
             <h1 class="top">Welkom op Petshop.be</h1>
             <h3>Gelieve in te loggen of een account aan te maken</h3>
@@ -17,11 +20,11 @@
                 Inloggen:
             </a><br/><br/>
             <h:panelGrid columns="2">
-                E-mail adres:<h:inputText id="email"></h:inputText> <br/>
-                Wachtwoord: <h:inputSecret id="wachtwoord"></h:inputSecret> <br/>
+                E-mail adres:<h:inputText id="email" value="${inputEmail}"></h:inputText> <br/>
+                Wachtwoord: <h:inputSecret id="wachtwoord" value="${inputWachtwoord}"></h:inputSecret> <br/>
                 <br/>
-                <h:commandButton class="login" action="Catalogus.xhtml" value="Log in"></h:commandButton>
-          </h:panelGrid>
+                <h:commandButton class="login" action="${klantBean.LogIn(inputEmail, inputWachtwoord)}" value="Log in"></h:commandButton>
+            </h:panelGrid>
 
         </h:form>
         <br/> <br/>

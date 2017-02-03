@@ -13,6 +13,7 @@ import javax.annotation.Resource;
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 
@@ -22,31 +23,48 @@ import javax.validation.Validator;
  */
 @Stateful
 public class KlantDAO {
-    
+
+    String dbvoornaam;
+    String dbfamilienaam;
+    String dbemail;
+    String dbadres;
+    String dbwachtwoord;
+
     @Resource
     Validator validator;
-    
+
     @PersistenceContext(unitName = "DierenWinkel-ejbPU")
     private EntityManager em;
-    
+
     private static final Logger LOG = Logger.getLogger(KlantDAO.class.getName());
-    
+
     public boolean nieuweKlant(String voornaam, String familienaam, String email, String adres, String wachtwoord) {
         Klant klant = new Klant(email, voornaam, familienaam, adres, wachtwoord);
+
         em.persist(klant);
-        
-        
+
         Set<ConstraintViolation<Klant>> violations = validator.validate(klant);
-        
-        if(violations.isEmpty()) {
+
+        if (violations.isEmpty()) {
             em.persist(klant);
             em.flush();
             return true;
         }
-        
+
         for (ConstraintViolation<Klant> violation : violations) {
             LOG.log(Level.WARNING, violation.getMessage());
         }
         return false;
+    }
+
+    public String klantLogIn(String email, String wachtwoord) {
+        Query query;
+        query = em.createNamedQuery("Klant.findByEmail").setParameter("email", email).setParameter("wachtwoord", wachtwoord);
+        try {
+            Klant klantchecker = (Klant) query.getSingleResult();
+        } catch (Exception e) {
+            return "index.xhtml";
+        }
+        return "Catalogus.xhtml";
     }
 }

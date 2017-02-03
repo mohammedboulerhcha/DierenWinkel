@@ -57,8 +57,8 @@ public class KlantBean implements Serializable{
         return isLoggedIn;
     }
 
-    public void setIsLoggedIn(boolean isLoggedIn) {
-        this.isLoggedIn = isLoggedIn;
+    public String LogIn(String inputEmail, String inputWachtwoord) {
+        return klantDAO.klantLogIn(inputEmail, inputWachtwoord);
     }
     
     public void nieuweKlant(String voornaam, String familienaam, String email, String adres, String wachtwoord) {
