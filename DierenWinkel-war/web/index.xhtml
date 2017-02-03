@@ -13,6 +13,12 @@
         <h1 class="top">Welkom op Petshop.be</h1>
         <h3>Gelieve in te loggen of een account aan te maken</h3>
         <h:form target="Catalogus.xhtml" >
+            <h1 class="top">Welkom op Petshop.be</h1>
+            <h3>Gelieve in te loggen of een account aan te maken</h3>
+            
+            <a id="inloggen">
+                Inloggen:
+            </a><br/><br/>
             <h:panelGrid columns="2">
                 E-mail adres:<h:inputText id="email" value="${inputEmail}"></h:inputText> <br/>
                 Wachtwoord: <h:inputSecret id="wachtwoord" value="${inputWachtwoord}"></h:inputSecret> <br/>
@@ -22,7 +28,7 @@
 
         </h:form>
         <br/> <br/>
-        <h:link outcome="NieuweAccount.xhtml" value="Nog geen account?"></h:link>
+        <h:link id="geenAccount" outcome="NieuweAccount.xhtml" value="Nog geen account?"></h:link>
 
     </h:body>
 </html>

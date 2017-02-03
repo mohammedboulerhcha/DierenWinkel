@@ -20,6 +20,8 @@
         </div>
 
         <div id="content" class="center_content">
+            <h:form >
+                    <h:panelGrid>
             <h:form target="index.xhtml">
                 
                 Voornaam: <h:inputText id="vnaam" value="#{voornaam}"></h:inputText> <br/>
@@ -30,6 +32,8 @@
                 Wachtwoord verifiëren: <h:inputSecret id="wachtw2"></h:inputSecret> <br/>
                 <h:commandButton value="Aanmaken" action="${klantBean.nieuweKlant(voornaam, familienaam, email, adres, wachtwoord)}" ></h:commandButton>
               
+                <h:commandButton value="Aanmaken" action="${klantBean.nieuweKlant(voornaam, familienaam, email, adres, wachtwoord)}"></h:commandButton>
+                    </h:panelGrid>
             </h:form>
         </div>
 

@@ -33,3 +33,13 @@ a:link:hover, a:visited:hover  {
     padding-left: 100px;
     padding-right: 100px;
 }
+
+#geenAccount {
+    color: blue;
+    font-weight: bold;
+}
+
+#inloggen {
+    color: blue;
+    font-weight: bold;
+}
