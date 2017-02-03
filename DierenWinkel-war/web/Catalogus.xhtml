@@ -17,8 +17,8 @@
             <h:link value="Habitat" style="padding: 20px" outcome="Habitat.xhtml"></h:link>
             <h:link value="Winkelmand" style="padding: 20px" outcome="Winkelmandje.xhtml"></h:link>
             <h:form target="Catalogus.xhtml">
-                Zoek: <h:inputText id="zoek" value="#{zoek}"></h:inputText> <br/>
-                <h:commandButton action="ProductPagina.xhtml" value="o-"></h:commandButton>
+                <h:inputText id="zoek" value="#{zoek}"></h:inputText> <br/>
+                <h:commandButton action="ProductPagina.xhtml" value="Zoek"></h:commandButton>
             </h:form>
         </div>
         <div class="center_content">
@@ -31,7 +31,7 @@
                 </h:column>
                 <h:column>
                     <f:facet name="header"><h:outputLabel value="prijs" class="h3"></h:outputLabel></f:facet>
-                    <h:outputText value="${artikel.prijs}"></h:outputText>
+                    <h:outputText value="€ ${artikel.prijs}"></h:outputText>
                 </h:column>
                 <h:column>
                     <f:facet name="header"><h:outputLabel value="foto" class="h3"></h:outputLabel></f:facet>
@@ -39,7 +39,7 @@
                 </h:column>
                 <h:column>
                     <h:form>
-                        <h:commandButton action="${winkelmandBean.voegToe(artikel)}" value="winkelkar"></h:commandButton>
+                        <h:commandButton action="${winkelmandBean.voegToe(artikel)}" value="Voeg toe aan winkelmand"></h:commandButton>
                     </h:form>
 
                 </h:column>

@@ -29,17 +29,19 @@ a:link:hover, a:visited:hover  {
 }
 
 
-.center_content td{
-    padding-left: 100px;
-    padding-right: 100px;
+.center_content{
+    text-align: center;
+    margin-left:auto; 
+    margin-right:auto;
 }
 
-#geenAccount {
-    color: blue;
-    font-weight: bold;
+table{
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-#inloggen {
+#geenAccount, #inloggen {
     color: blue;
     font-weight: bold;
 }
