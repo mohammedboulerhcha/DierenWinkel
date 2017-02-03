@@ -20,20 +20,16 @@
         </div>
 
         <div id="content" class="center_content">
-            <h:form >
-                    <h:panelGrid>
             <h:form target="index.xhtml">
-                
-                Voornaam: <h:inputText id="vnaam" value="#{voornaam}"></h:inputText> <br/>
-                Familienaam: <h:inputText id="fnaam" value="${familienaam}"></h:inputText> <br/>
-                E-mail adres: <h:inputText id="email" value="${email}"></h:inputText> <br/>
-                Adres: <h:inputTextarea id="adres" cols="30" rows="3" value="${adres}"></h:inputTextarea> <br/>
-                Wachtwoord: <h:inputSecret id="wachtw1" value="${wachtwoord}"></h:inputSecret> <br/>
-                Wachtwoord verifiëren: <h:inputSecret id="wachtw2"></h:inputSecret> <br/>
-                <h:commandButton value="Aanmaken" action="${klantBean.nieuweKlant(voornaam, familienaam, email, adres, wachtwoord)}" ></h:commandButton>
-              
-                <h:commandButton value="Aanmaken" action="${klantBean.nieuweKlant(voornaam, familienaam, email, adres, wachtwoord)}"></h:commandButton>
-                    </h:panelGrid>
+                <h:panelGrid>
+                    Voornaam: <h:inputText id="vnaam" value="#{voornaam}"></h:inputText> <br/>
+                    Familienaam: <h:inputText id="fnaam" value="${familienaam}"></h:inputText> <br/>
+                    E-mail adres: <h:inputText id="email" value="${email}"></h:inputText> <br/>
+                    Adres: <h:inputTextarea id="adres" cols="30" rows="3" value="${adres}"></h:inputTextarea> <br/>
+                    Wachtwoord: <h:inputSecret id="wachtw1" value="${wachtwoord}"></h:inputSecret> <br/>
+                    Wachtwoord verifiëren: <h:inputSecret id="wachtw2"></h:inputSecret> <br/>
+                    <h:commandButton value="Aanmaken" action="${klantBean.nieuweKlant(voornaam, familienaam, email, adres, wachtwoord)}" ></h:commandButton>
+                </h:panelGrid>
             </h:form>
         </div>
 
