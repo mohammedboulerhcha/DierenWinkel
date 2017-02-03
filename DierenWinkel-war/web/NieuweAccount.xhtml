@@ -21,35 +21,14 @@
 
         <div id="content" class="center_content">
             <h:form >
-                 <panel header="Validate">
-        <h:messages />
- 
-                <h:panelGrid columns="4" cellpadding="5">
-                
-                  <h:outputLabel for="voornaam" value="voornaam: (@Size(min=2,max=5))" />
-                  <h:inputText id="voornaam" value="#{beanValidationView.voornaam}" label="voornaam"/>
-                    <h:message for="voornaam" />
-                    <h:outputText value="#{beanValidationView.voornaam}" />
-                    <h:outputLabel for="voornaam" value="voornaam: (@Size(min=2,max=5))" />
-                    <h:inputText id="familienaam" value="#{beanValidationView.familienaam}" label="familienaam"/>
-                    <h:message for="familienaam" />
-                    <h:outputText value="#{beanValidationView.familienaam}" />
-                <h:outputLabel for="e_mail_adres" value="e_mail_adres" />
-                    <h:inputText id="e_mail_adres" value="#{beanValidationView.e_mail_adres}" label="e_mail_adres"/>
-            <h:message for="e_mail_adres" />
-            <h:outputText value="#{beanValidationView.e_mail_adres}" />
-              <h:outputLabel for="adres" value="adres" />
-                    <h:inputText id="adres" value="#{beanValidationView.adres}" label="adres"/>
-            <h:message for="adres" />
-            <h:outputText value="#{beanValidationView.adres}" />
-                 <h:outputLabel for="Wachtwoord" value="Wachtwoord: (@Pattern(regexp='^[-+]?\\d+$'))" />
-                 <h:inputText id="pattern" value="#{beanValidationView.wachtwoord}" label="Wachtwoord"/>
-            <h:message for="Wachtwoord" />
-            <h:outputText value="#{beanValidationView.wachtwoord}" />
-            <h:outputLabel for="Wachtwoord_verifiëren" value="wachtwoord_verifiëren: (@Pattern(regexp='^[-+]?\\d+$'))" />
-            <h:inputText id="pattern1" value="#{beanValidationView.wachtwoord_verifiëren}" label="wachtwoord_verifiëren"/>
-            <h:message for="wachtwoord_verifiëren" />
-            <h:outputText value="#{beanValidationView.wachtwoord_verifiëren}" />
+                <h:panelGrid>
+                Voornaam: <h:inputText id="vnaam"></h:inputText> <br/>
+                Familienaam: <h:inputText id="fnaam"></h:inputText> <br/>
+                E-mail adres: <h:inputText id="email"></h:inputText> <br/>
+                Adres: <h:inputTextarea id="adres" cols="30" rows="3"></h:inputTextarea> <br/>
+                Wachtwoord: <h:inputSecret id="wachtw1"></h:inputSecret> <br/>
+                Wachtwoord verifiëren: <h:inputSecret id="wachtw2"></h:inputSecret> <br/>
+                <h:commandButton value="Aanmaken"></h:commandButton>
               </h:panelGrid>
                      <h:commandButton value="Aanmaken"></h:commandButton>
     </panel>
