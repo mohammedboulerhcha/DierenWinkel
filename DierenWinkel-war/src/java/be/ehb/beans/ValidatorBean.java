@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  * met behulp van https://www.mkyong.com/regular-expressions/how-to-validate-email-address-with-regular-expression/
  * @author mobapp10
  */
-public class ValidatorBean {
+public class ValidatorBean{
     Pattern pattern;
     Matcher matcher;
     String emailREGEX = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
