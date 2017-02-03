@@ -5,7 +5,6 @@
  */
 package be.ehb.beans;
 
-
 import be.ehb.dao.productDAO;
 import be.ehb.entities.Product;
 import java.io.Serializable;
@@ -20,30 +19,30 @@ import javax.inject.Named;
  */
 @Named
 @SessionScoped
-public class productBean implements Serializable{
+public class productBean implements Serializable {
 
     @EJB
     productDAO proddao;
-    
+
     public productBean() {
     }
-    
+
     public List<Product> getProdLijst() {
         return proddao.getProdLijst();
     }
-    
+
     public List<Product> getVoeding() {
         return proddao.getVoeding();
     }
-    
+
     public List<Product> getSpeelgoed() {
         return proddao.getSpeelgoed();
     }
-    
+
     public List<Product> getHabitat() {
         return proddao.getHabitat();
     }
-    
+
     public List<Product> getSpecifiekArtikel(String zoek) {
         return proddao.getSpecifiekArtikel(zoek);
     }
