@@ -47,7 +47,5 @@ public class productBean implements Serializable{
     public List<Product> getSpecifiekArtikel(String zoek) {
         return proddao.getSpecifiekArtikel(zoek);
     }
-    
+
 }
-
-

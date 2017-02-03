@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body><h:form>
+    <panel id="panel" header="New User">
+ 
+        <h:messages id="msgs" />
+ 
+        <h:panelGrid columns="3" cellpadding="5">
+            <h:outputLabel for="firstname" value="Firstname:" />
+            <h:inputText id="firstname" value="#{beanValidationView.firstname}" required="true" label="Firstname">
+                <validateLength minimum="2" />
+            </p:inputText>
+            <h:message for="firstname"  />
+ 
+            <h:outputLabel for="lastname" value="Lastname:" />
+            <h:inputText id="lastname" value="#{beanValidationView.lastname}" label="Lastname" required="true">
+                <validateLength minimum="2" />
+                <ajax update="msgLastname" event="keyup" />
+            </p:inputText>
+            <h:message for="lastname" id="msgLastname"  />
+ 
+        </h:panelGrid>
+ 
+        <commandButton value="Save" update="panel" actionListener="#{beanValidationView.save}" icon="ui-icon-check" />
+    </p:panel>
+</h:form>
+        <h:link outcome="NieuweAccount.xhtml" value="Nog geen account?"></h:link>
+    </h:body>
+</html>
+
