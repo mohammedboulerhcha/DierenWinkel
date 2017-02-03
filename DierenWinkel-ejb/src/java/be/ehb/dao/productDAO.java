@@ -10,7 +10,6 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
@@ -37,6 +36,12 @@ public class productDAO {
      *
      * @return
      */
+    
+    /** methode om enkel de voeding weer te geven. 
+     * 
+     * @return deze methode geeft enkel de voeding weer
+     */
+    
     public List<Product> getVoeding() {
         Query query;
         query = em.createNamedQuery("Product.findByCategorie").setParameter("categorie", "voeding");
@@ -44,6 +49,10 @@ public class productDAO {
         return producten;
     }
 
+   /** methode om enkel het speelgoed weer te geven. 
+     * 
+     * @return deze methode geeft enkel het speelgoed weer
+     */
     public List<Product> getSpeelgoed() {
         Query query;
         query = em.createNamedQuery("Product.findByCategorie").setParameter("categorie", "speelgoed");
@@ -51,6 +60,10 @@ public class productDAO {
         return producten;
     }
 
+    /** methode om enkel habitats weer te geven. 
+     * 
+     * @return deze methode geeft enkel habitats weer.
+     */
     public List<Product> getHabitat() {
         Query query;
         query = em.createNamedQuery("Product.findByCategorie").setParameter("categorie", "habitat");
@@ -58,6 +71,10 @@ public class productDAO {
         return producten;
     }
 
+    /** methode om te zoeken op een specifiek artikel of prijs. 
+     * 
+     * @return deze methode geeft een specifiek artikel terug als dit bestond. Het is ook mogelijk om op een bepaalde prijs te zoeken.
+     */
     public List<Product> getSpecifiekArtikel(String zoek) {
         Query query;
         query = em.createNamedQuery("Product.findByNaam").setParameter("naam", zoek);
