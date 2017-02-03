@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Klant.findAll", query = "SELECT k FROM Klant k"),
     @NamedQuery(name = "Klant.findByVoornaam", query = "SELECT k FROM Klant k WHERE k.voornaam = :voornaam"),
     @NamedQuery(name = "Klant.findByFamilienaam", query = "SELECT k FROM Klant k WHERE k.familienaam = :familienaam"),
-    @NamedQuery(name = "Klant.findByEmail", query = "SELECT k FROM Klant k WHERE k.email = :email"),
+    @NamedQuery(name = "Klant.findByEmail", query = "SELECT k FROM Klant k WHERE k.email = :email AND k.wachtwoord = :wachtwoord"),
     @NamedQuery(name = "Klant.findByWachtwoord", query = "SELECT k FROM Klant k WHERE k.wachtwoord = :wachtwoord")})
 public class Klant implements Serializable {
     private static final long serialVersionUID = 1L;
