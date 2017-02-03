@@ -61,10 +61,8 @@ public class KlantBean implements Serializable{
         return klantDAO.klantLogIn(inputEmail, inputWachtwoord);
     }
     
-    public void nieuweKlant(String voornaam, String familienaam, String email, String adres, String wachtwoord) {
+    public String nieuweKlant(String voornaam, String familienaam, String email, String adres, String wachtwoord) {
         klantDAO.nieuweKlant(voornaam, familienaam, email, adres, wachtwoord);
+        return "index.xhtml";
     }
-    
-    
-    
 }

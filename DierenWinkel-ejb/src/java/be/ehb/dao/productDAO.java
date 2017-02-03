@@ -41,7 +41,6 @@ public class productDAO {
      * 
      * @return deze methode geeft enkel de voeding weer
      */
-    
     public List<Product> getVoeding() {
         Query query;
         query = em.createNamedQuery("Product.findByCategorie").setParameter("categorie", "voeding");
@@ -73,13 +72,13 @@ public class productDAO {
 
     /** methode om te zoeken op een specifiek artikel of prijs. 
      * 
-     * @return deze methode geeft een specifiek artikel terug als dit bestond. Het is ook mogelijk om op een bepaalde prijs te zoeken.
+     * @return deze methode geeft een specifiek artikel met de ingevoerde naam. Het is ook mogelijk om op een bepaalde prijs te zoeken.
      */
     public List<Product> getSpecifiekArtikel(String zoek) {
         Query query;
         query = em.createNamedQuery("Product.findByNaam").setParameter("naam", zoek);
         List<Product> producten = query.getResultList();
-        if(producten == null) {
+        if(producten.isEmpty()) {
             query = em.createNamedQuery("Product.findByPrijs").setParameter("prijs", zoek);
             List<Product> product = query.getResultList();
             return product;
