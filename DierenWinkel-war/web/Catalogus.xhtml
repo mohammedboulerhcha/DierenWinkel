@@ -35,7 +35,7 @@
                     <img class="img-thumbnail" src="${artikel.foto}" style="height: auto; width: 200px;"></img>
                 </h:column>
                 <h:column>
-                    <h:button value="Toevoegen aan winkelkar"></h:button>
+                    <h:button value="Toevoegen aan winkelkar" outcome="${winkelkarBean.voegToe(artikel)}"></h:button>
                 </h:column>
             </h:dataTable>
         </div>
