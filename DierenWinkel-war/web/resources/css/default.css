@@ -41,12 +41,7 @@ table{
     padding-right: 10px;
 }
 
-#geenAccount {
-    color: blue;
-    font-weight: bold;
-}
-
-#inloggen {
+#geenAccount, #inloggen {
     color: blue;
     font-weight: bold;
 }
